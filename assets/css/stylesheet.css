@@ -1,16 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-size:100%;
-    width:100%;
-    display:inline-flex;
-    flex-direction:row;
-    justify-content: left;
+    display:grid;
+    grid-template-columns: 10% 60% 30%;
+    background-image: url("../images/background-blank.png");
+    background-size: cover;
 }
 
 nav{
     display: inline-flex;
     align-items: flex-start;
     padding-left: 0%;
-    padding-right:20%;
+    padding-right:50%;
+}
+
+header{
+}
+
+.fire-cube{
+    width:100%;
+    animation-name: burn;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+.cold-cube{
+    position:absolute;
+    top: 0;
+    right:0;
+    width:30%;
 }
 
 .sidebar{
@@ -19,7 +42,7 @@ nav{
     justify-content: space-evenly;
     height: 500px;
     width: 10%;
-    padding: 0px;
+    padding: 10px;
     position:fixed;
     top:0;
     text-align: left;
@@ -63,7 +86,9 @@ nav{
 .contents{
     display:block;
     position: relative;
-    padding-left:15%;
+    padding-left:10%;
+    padding-right:10%;
+    justify-content: center;
     
 }
 #logo{
@@ -71,3 +96,31 @@ nav{
     height: auto;
 }
 
+@keyframes burn {
+    0%   {opacity:1;}
+    4%   {opacity:0.92;}
+    8%   {opacity:0.84;}
+    12%  {opacity:0.76}
+    16%  {opacity:0.68;}
+    20%  {opacity:0.60;}
+    24%  {opacity:0.52;}
+    28%  {opacity:0.44;}
+    32%  {opacity:0.36;}
+    36%  {opacity:0.28;}
+    40%  {opacity:0.20;}
+    44%  {opacity:0.12;}
+    48%  {opacity:0.04;}
+    52%  {opacity:0.04;}
+    56%  {opacity:0.12;}
+    60%  {opacity:0.20;}
+    64%  {opacity:0.28;}
+    68%  {opacity:0.36;}
+    72%  {opacity:0.44;}
+    76%  {opacity:0.52;}
+    80%  {opacity:0.60;}
+    84%  {opacity:0.68;}
+    88%  {opacity:0.76;}
+    92%  {opacity:0.84;}
+    96%  {opacity:0.92;}
+    100% {opacity:1}
+  }
