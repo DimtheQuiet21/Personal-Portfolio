@@ -5,68 +5,91 @@
     <meta charset="UTF-8" />
     <meta name="description" content="Portfolio Profile of Alan Lee. Web designer and developer who has a special interest in the ancient world and metallurgy.">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5">
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/stylesheet.css">
     <link rel="icon" type="image/png" sizes="64x64" href="./assets/images/Personal Logo-T.png">
     <title>Alan Lee</title>
 </head>
 
 <body>
-    <nav>
-        <ul class = "sidebar">
-            <li><a href= #titlecard><img id="logo" src="./assets/images/Personal Logo-T.png"></a></li>
-            <li><a class = "sbar-tag" href="#about-me">About</a></li>
-            <li><a class = "sbar-tag" href="#expert">Experience</a></li>
-            <li><a class = "sbar-tag" href="#projects">Projects</a></li>
-            <li><a class = "sbar-tag" href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <main class = "contents">
-
-        <header id = "titlecard">
-            <h1 class = "text-1">Hello, My name is Alan Lee</h1>
-            <h2 class = "text-2">Web Designer and Developer</h2>
-        </header>
-
-        <section>
-            <h2 class = "text-2" id = "expert">My Experience</h2>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-        </section>
-
-        <section>
-            <h2 class = "text-2" id = "projects">My Projects</h2>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-        </section>
-
-        <footer>
-            <h2 class = "text-2" id ="contact">Contact me</h2>
-        </footer>
-            
-    </main>
-
-    <aside>
+    <!--<header>
         <figure>
             <img class ="cold-cube" src="./assets/images/fire-cube-cool.png" alt="Image of Cool Fire Cube">
-            <img class = "fire-cube" src="./assets/images/fire-cube-hot.png" alt="Image of Flaming Cube">
+            <img class = "fire-cube" src="./assets/images/fire-cube-super.png" alt="Image of Flaming Cube">
             <figcaption></figcaption>
         </figure>
-        
-        <section>
-            <h2 class = "text-2" id ="about-me">About Me</h2>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-            <p>.</p>
-        </section>
-    </aside>
+    </header>-->
 
+    <header class = "blurb" id = "titlecard">
+        <h1 class = "text-1 card" >Hello, My name is Alan Lee</h1>
+        <h2 class = "text-2">Researcher, Archaeologist, and Aspiring Web Designer and Developer</h2>
+        <!--<img class ="cold-cube" src="./assets/images/fire-cube-cool.png" alt="Image of Cool Fire Cube">-->
+    </header>
+
+    <main>
+        <nav>
+            <ul class = "sidebar">
+                <li><a class = "bar-tag colorshift" href="#about-me">About Me</a></li>
+                <li><a class = "bar-tag colorshift" href="#expert">Experience</a></li>
+                <li><a class = "bar-tag colorshift" href="#projects">Projects</a></li>
+                <li><a class = "bar-tag colorshift" href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+        <img class = "fire-cube" src="./assets/images/fire-cube-cooling.png" alt="Image of Flaming Cube">
+        <nav>
+            <ul class = "headbar">
+                <li><a class = "bar-tag colorshift" href="#about-me">About Me</a></li>
+                <li><a class = "bar-tag colorshift" href="#expert">Experience</a></li>
+                <li><a class = "bar-tag colorshift" href="#projects">Projects</a></li>
+                <li><a class = "bar-tag colorshift" href="#contact">Contact Me</a></li>
+            </ul>
+        </nav>
+
+        <section class = "contents">
+
+            <section class = "blurb" id = "expert">
+                <h2 class = "text-2 card">My Experience</h2>
+                <section>
+                    <ul class = "text-3 insidelist">
+                        <li>HTML Proficient</li>
+                        <li>CSS Capable</li>
+                        <li>Javascript Knowledgable</li>
+                        <li>Well versed in Matlab</li>
+                        <li>Master's in Chemistry (Materials)</li>
+                        <li>Master's in Anthropology </li>
+                    </ul>
+                </section>
+            </section>
+
+            <section class = "blurb" id = "projects">
+                <h2 class = "text-2 card" >Example Projects</h2>
+                <section class = "project-box">
+                    <a class = "card growing" href = "https://www.youtube.com/watch?v=Py4Y7GmY5kg/" ><img id = "card-img" src = "./assets/images/teeth.jpg" alt = "The UW-MIARIP Team Dental Project"></a>
+                    <a class = "card growing" href = "https://dimthequiet21.github.io/prework-bootcamp/" ><img id = "card-img" src = "./assets/images/prework.png" alt = "A Basic Cheat Sheet for HTML"></a>
+                    <a class = "card growing" href = "https://dimthequiet21.github.io/Horiseon-Social-Solutions-Services/" ><img id = "card-img" src = "./assets/images/horiseon.png" alt = "Horiseon Social Solutions Services"></a>
+                </section>
+            </section>
+
+            <section class = "blurb" id = "about-me">
+                <h2 class = "text-2 card">About Me</h2>
+                <a class = "project-box"><img class = "growing" id = "headshot" src="./assets/images/headshot.jpg" alt="Profile Picture of Alan Lee"></a>
+                <section >
+                    <!--<div id="overlay" onmouseover="hideOverlay()" onmouseleave="showOverlay"></div>-->
+                    <p class = "text-3" > My name is Alan Lee. My story is a bit of a odd one, if you'd like to hear about it.</p>
+
+                    <p class = "text-3">I come from Birmingham, AL in the deepness of the American South. After spending most of my life dreading the arrival of the summertime sweats, I decided to move up North to Wisconsin. Now I nearly freeze every February. I earned my Master's in Chemistry, and then began a PhD in Archaeology (or Anthropology if you're nitpicky about it). I study ancient blacksmithing of South Asia. I began coding for my dissertation and realized how much I enjoyed it, and that I was pretty good at it. Now I'm an aspiring web developer and webdesigner.</p>
+                </section>
+            </section>
+        </section>
+    </main>
+
+
+            
+    <aside>
+        
+        
+       
+    </aside>
+    <script src="./assets/script.js"></script>
 </body>
