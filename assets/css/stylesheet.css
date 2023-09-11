@@ -22,7 +22,6 @@ nav{
     display: flex;
     justify-items: flex-start;
     justify-content: space-evenly;
-    align-items: center;
     width:100%;
     grid-area:nav;
 }
