@@ -19,7 +19,7 @@ Through the process of creating my personal profile I have learned the importanc
 
 ![Screenshot of Personal Portfolio of Alan Lee](/assets/images/screenshot.png?raw=true "Alan Lee's Portfolio")
 
-Link to Alan Lee's Personal Portfolio https://dimthequiet21.github.io/Personal-Portfolio/
+Link to Alan Lee's Personal Portfolio https://dimthequiet21.github.io/Personal-Portfolio-of-Alan-Lee/
 
 ## Installation
 
