@@ -1,50 +1,66 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-size:100%;
-    display:grid;
-    grid-template-columns: 10% 60% 30%;
+body{
     background-image: url("../images/background-blank.png");
     background-size: cover;
-}
-
-nav{
-    display: inline-flex;
-    align-items: flex-start;
-    padding-left: 0%;
-    padding-right:50%;
+    min-width: 375px;
 }
 
 header{
+    margin-bottom: 10px;
 }
 
-.fire-cube{
-    width:100%;
-    animation-name: burn;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
+main {
+    font-size:100%;
+    display:grid;
+    grid-template-areas:
+    "nav fire-cube"
+    "nav contents";
+    justify-items: center;
 }
+
+
+nav{
+    display: flex;
+    align-items: flex-start;
+    padding-left: 0%;
+    margin:20px;
+    width:100%;
+    grid-area:nav;
+}
+
+/* TO DO SET UP Animation 
 
 .cold-cube{
-    position:absolute;
-    top: 0;
-    right:0;
-    width:30%;
+    position:relative;
+    align-self: center;
+    width:70%;
+}*/
+
+.fire-cube{
+    position:relative;
+    align-self: center;
+    width:70%;
+    grid-area: fire-cube;   
+}
+
+    /* TO DO Set UP Animation
+    animation-name: burn;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;*/ 
+
+.picnav{
+    display: grid;
+    grid-template-columns: 15% 85%;
 }
 
 .sidebar{
     display:flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    height: 500px;
-    width: 10%;
+    justify-content: space-between;
+    height: 250px;
+    width: 100%;
     padding: 10px;
-    position:fixed;
-    top:0;
+    position:sticky;
+    top:50px;
     text-align: left;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -54,16 +70,45 @@ header{
     font-style: normal;
     list-style-type: none;
 }
+
 .sidebar a {
     text-decoration: none;
-    color: rgb(236, 236, 236);
+    color: rgb(235, 218, 235);
 }
 
-.sbar-tag{
-    background-color: rgb(106, 106, 106);
+.headbar{
+    display:none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
     width: 100%;
-    justify-content: left;
+    padding: 10px;
+    position:sticky;
+    top:50px;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: normal;
+    list-style-type: none;
 }
+.headbar a {
+    text-decoration: none;
+    color: rgb(235, 218, 235);
+}
+
+.bar-tag{
+    min-width: fit-content;
+    justify-content: center;
+    background-color: sandybrown;
+    padding:10px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 10px rgb(104, 104, 104);
+    transition: background-color 0.5s ease-in-out;
+}
+
 .text-1{
     font-size: 2.5em;
     font-weight: bold;
@@ -82,19 +127,165 @@ header{
     margin-bottom: 10px;
     font-family: 'Courier New', Courier, monospace;
     font-style: normal;
+    
 }
+
+.text-3{
+    font-size: 1em;
+    font-weight: bold;
+    text-align: left;
+    color:rgb(235, 218, 235);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-family: 'Rockwell', Rockwell, monospace;
+    font-style: normal;
+}
+
+
+
+
 .contents{
-    display:block;
+    display: flexbox;
     position: relative;
     padding-left:10%;
     padding-right:10%;
     justify-content: center;
-    
 }
+
+.blurb{
+    margin-bottom: 20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.card{
+    border-style: solid;
+    border-width: 1px;
+    border-color:rgb(22, 22, 97);
+    padding: 0px;
+    margin: 10px;
+    border-radius:15px;
+    box-shadow: 0px 10px 10px rgb(104, 104, 104);
+    background-color: antiquewhite;
+}
+
+.growing{
+    flex: 0 0 50%;
+    transition: flex-basis 0.5s ease-in-out;
+}
+
+.growing:hover{
+    flex: 0 0 70%;
+    transition: flex-basis 0.5s ease-in-out;
+}
+
+.colorshift:hover{
+    background-color: rgba(0,0,0,0.5);
+    transition: background-color 0.5s ease-in-out;
+}
+
+#overlay {
+    position:fixed;
+    display: block; 
+    opacity: 1;/* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#headshot{
+    width:50%;
+    border:10px double antiquewhite;
+    border-radius: 50%;
+    align-items: center;
+}
+
+#card-img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    border-radius: 15px;   
+}
+
 #logo{
-    max-width:75%;
-    height: auto;
+    
+    height: 100px;
 }
+
+
+
+#insidelist{
+    list-style-position: inside;
+}
+
+@media screen and (max-width: 1040px) {
+    main {
+        font-size:100%;
+        display:grid;
+        grid-template-areas:
+        "fire-cube"
+        "nav"
+        "contents";
+    }
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-self:flex-start;
+        padding-left: 3%;
+        margin:20px;
+        width:100%;
+    }
+
+    .sidebar{
+        display:none;
+    }
+
+    .headbar{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 90%;
+        height: 50px;
+        padding: 10px;
+        position:relative;
+        top:0;
+        text-align: left;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .growing{
+        flex: 0 0 75%;
+        transition: flex-basis 0.5s ease-in-out;
+    }
+    
+    .growing:hover{
+        flex: 0 0 99%;
+        transition: flex-basis 0.5s ease-in-out;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .headbar{
+        flex-wrap: wrap;
+        height: 150px;
+    }
+  }
 
 @keyframes burn {
     0%   {opacity:1;}
