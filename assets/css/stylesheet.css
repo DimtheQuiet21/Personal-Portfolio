@@ -1,7 +1,7 @@
 :root{
     --nav-tab-color:sandybrown;
     --tint:rgba(0,0,0,0.5);
-    --text-color-light:rgb(235, 218, 235);
+    --text-color-light:antiquewhite;
     --text-color-dark:rgb(0, 0, 0);
     --border-color:rgb(22, 22, 97);
     --card-color:antiquewhite;
@@ -15,10 +15,11 @@
     --transition-speed-slow:2s ease-in-out;
 }
 
+/*The background gradient*/
 body{
-    background-image: url("../images/background-blank.png");
-    background-size: 120%;
-    background-repeat: no-repeat;
+    background-image: linear-gradient(var(--nav-tab-color) 30%, var(--text-color-dark));
+    background-attachment: fixed;
+    
 
 }
 
@@ -26,6 +27,7 @@ header{
     margin-bottom: 10px;
 }
 
+/*Setting up the Grid mainframe of the page*/
 main {
     font-size:100%;
     display:grid;
@@ -35,6 +37,7 @@ main {
     justify-items: center;
 }
 
+/*The orange button navigation bar*/
 nav{
     display: flex;
     justify-items: flex-start;
@@ -43,20 +46,25 @@ nav{
     grid-area:nav;
 }
 
+/*The contact information that may be fleshed out later*/
 footer{
     justify-content: center;
     align-items: center;
     padding: 10px;
     margin: 10px;
 }
-/* TO DO SET UP Animation 
 
+/*The central dissappearing picture*/
 .cold-cube{
     position:relative;
-    align-self: center;
     width:70%;
-}*/
+    grid-area: fire-cube;
+    animation-name: burn;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;  
+}
 
+/*The central picture of the site*/
 .fire-cube{
     position:relative;
     align-self: center;
@@ -64,11 +72,8 @@ footer{
     grid-area: fire-cube;   
 }
 
-    /* TO DO Set UP Animation
-    animation-name: burn;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;*/ 
 
+/*The format of the button sidebar. This makes the sidebar slide*/
 .sidebar{
     display:flex;
     flex-direction: column;
@@ -88,16 +93,13 @@ footer{
     list-style-type: none;
 }
 
+/* text style of the buttons*/
 .sidebar a {
     text-decoration: none;
     color: var(--text-color-light);
 }
 
-.headbar a {
-    text-decoration: none;
-    color: var(--text-color-light);
-}
-
+/* The button style inside the sidebar*/
 .bar-tag{
     min-width: fit-content;
     justify-content: center;
@@ -108,6 +110,13 @@ footer{
     transition: background-color 0.5s ease-in-out;
 }
 
+/*The css function that changes the hover color of the sidebar buttons*/
+.colorshift:hover{
+    background-color: var(--tint);
+    transition: background-color var(--transition-speed-fast);
+}
+
+/*The text style of the largest header font*/
 .text-1{
     font-size: 2.5em;
     font-weight: bold;
@@ -118,6 +127,7 @@ footer{
     font-style: normal;
 }
 
+/*The text style of the section header fonts and sidebar buttons*/
 .text-2{
     font-size: 1.5em;
     font-weight: bold;
@@ -128,6 +138,7 @@ footer{
     font-style: normal;
 }
 
+/*The text style of the lists and paragraphs*/
 .text-3{
     font-size: 1em;
     font-weight: bold;
@@ -140,6 +151,7 @@ footer{
     font-style: normal;
 }
 
+/*The space for contents*/
 .contents{
     display: flexbox;
     position: relative;
@@ -148,6 +160,7 @@ footer{
     justify-content: center;
 }
 
+/*The set up for individual sections like about me*/
 .blurb{
     margin-bottom: 20px;
     display:flex;
@@ -155,6 +168,7 @@ footer{
     justify-content: center;
 }
 
+/*A super important flex box section that allows for photos and cards to grow*/
 .project-box{
     display: flex;
     flex-direction: row;
@@ -162,6 +176,7 @@ footer{
     justify-content:center;
 }
 
+/*The style of the cards in the site. Cards are headers AND images.*/
 .card{
     border-style: solid;
     border-width: 1px;
@@ -173,22 +188,21 @@ footer{
     background-color: var(--card-color);
 }
 
+/*The class that shrinks back into original size*/
 .growing{
     flex: 0 0 50%;
     transition: flex-basis var(--transition-speed-fast);
 }
 
+/*the pusedoclass that causes an image card to grow*/
 .growing:hover{
     flex: 0 0 70%;
     transition: flex-basis var(--transition-speed-fast);
     box-shadow: var(--glow-border) var( --box-glow);
 }
 
-.colorshift:hover{
-    background-color: var(--tint);
-    transition: background-color var(--transition-speed-fast);
-}
 
+/*TO DO, Figure out how to put a javascript overlay on the Selfie*/
 #overlay {
     position:fixed;
     display: block; 
@@ -204,6 +218,7 @@ footer{
     cursor: pointer; /* Add a pointer on hover */
 }
 
+/*The headshot photo*/
 #headshot{
     width:50%;
     border:10px double var(--card-color);
@@ -211,6 +226,7 @@ footer{
     align-items: center;
 }
 
+/*The project card photos*/
 #card-img{
     width:100%;
     height:100%;
@@ -218,10 +234,7 @@ footer{
     border-radius: var(--border-radius);   
 }
 
-#logo{
-    height: 100px;
-}
-
+/*I don't like bullet points outside my cards*/
 #insidelist{
     list-style-position: inside;
 }
